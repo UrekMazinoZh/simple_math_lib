@@ -69,4 +69,17 @@ namespace MathLib
 
     // Function to search GCD
     int GCD(int a, int b);
+
+    // Function to calculate the third angle of a triangle
+    template <typename T>
+    T calculateThirdAngle(T angle1, T angle2)
+    {
+        const T totalSumOfAngles = 180;
+        if (angle1 <= 0 || angle2 <= 0 || angle1 + angle2 >= totalSumOfAngles)
+        {
+            throw std::invalid_argument("Invalid angles for a triangle.");
+        }
+        return totalSumOfAngles - (angle1 + angle2);
+    }
+
 }
